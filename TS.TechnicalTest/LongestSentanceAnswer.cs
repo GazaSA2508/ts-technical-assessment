@@ -29,7 +29,12 @@ public class LongestSentanceAnswer
         { 
             string newSentence = sentence.Trim();
 
+            //### Count words in new setence
+            var words = newSentence.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            int wordCount = words.Count();
 
+            if (wordCount > maxCount)
+                maxCount = wordCount;
 
         }
 
@@ -37,7 +42,5 @@ public class LongestSentanceAnswer
 
 
     }
-
-
 
 }
