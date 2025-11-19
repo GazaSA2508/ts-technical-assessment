@@ -6,13 +6,19 @@ public class LongestSentanceAnswer
     public static int Solution(string s)
     {
         //### Calculate longest sentence
+        int result = GetLongestSentance(s);
 
+        return result;
 
-        throw new NotImplementedException("Not completed yet");
+        //throw new NotImplementedException("Not completed yet");
     }
 
-
-    private static int GetMaxWordCount(string text)
+    /// <summary>
+    /// Get the word count from the sentence containing the largest number of valid words
+    /// </summary>
+    /// <param name="text"></param>
+    /// <returns></returns>
+    private static int GetLongestSentance(string text)
     {
         if (string.IsNullOrWhiteSpace(text))
             return 0;
