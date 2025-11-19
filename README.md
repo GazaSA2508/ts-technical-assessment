@@ -1,2 +1,2 @@
-# ts-technical-assessment
-Technical Assessment
+# TechnicalAssessment
+The technical assessment seed project
