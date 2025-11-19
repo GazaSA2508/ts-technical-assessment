@@ -4,7 +4,12 @@ public class DeepestPitAnswer
 {
     public static int Solution(int[] points)
     {
-        throw new NotImplementedException("Not completed yet");
+        //### Calculate deepest pit
+        int result = GetPitDepth(points);
+
+        return result;
+
+        //throw new NotImplementedException("Not completed yet");
     }
 
     private static int GetPitDepth(int[] A)
