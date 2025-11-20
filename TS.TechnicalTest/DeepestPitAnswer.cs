@@ -12,15 +12,25 @@ public class DeepestPitAnswer
         //throw new NotImplementedException("Not completed yet");
     }
 
+    /// <summary>
+    /// Finds the deepest pit in an array while enforcing the following constraints:
+    /// Length N within range of [1..1,000,000]
+    /// Each element within range of [0..1,000,000]
+    /// </summary>
+    /// <param name="A"></param>
+    /// <returns></returns>
     private static int GetPitDepth(int[] A)
     {
         //### Note - Algorithm used to calculate depth
         // depth = min(A[P] - A[Q], A[R] - A[Q])
-        
-        if (A == null || A.Length < 3)
-            return -1;
 
+        ArgumentNullException.ThrowIfNull(A);
+        
         int length = A.Length;
+
+        //### Do validation for rules required
+        Validate(length, A);
+
         int i = 0;
         int maxDepth = -1;
 
@@ -35,7 +45,7 @@ public class DeepestPitAnswer
 
             int p = i;
 
-            //### Walk downward to Q
+            //### Strictly decreasing run (P to Q) (Walk downward to Q)
             while (i < length - 1 && A[i] > A[i + 1])
                 i++;
 
@@ -45,7 +55,7 @@ public class DeepestPitAnswer
             if (q == length - 1)
                 break;
 
-            //### Walk upward to R
+            //### Strictly increasing run (Q to R) (Walk upward to R)
             while (i < length - 1 && A[i] < A[i + 1])
                 i++;
 
@@ -65,6 +75,35 @@ public class DeepestPitAnswer
 
 
         return maxDepth;
+
+    }
+
+    private static void Validate(int length, int[] A)
+    {
+        //### Validate array length
+        if (length < 1 || length > 1000000)
+        {
+            var error = $"Array length N={length} is outside the allowed range [1..1,000,000].";
+
+            Console.WriteLine($"ERROR: {error}");
+
+            throw new ArgumentOutOfRangeException(nameof(A), error);
+
+        }
+
+        //### Validate element value
+        for (int k = 0; k < length; k++)
+        {
+            if (A[k] < 0 || A[k] > 1000000) 
+            {
+                var error = $"Array element A[{k}]={A[k]} is outside the allowed range [0..1,000,000].";
+
+                Console.WriteLine($"ERROR: {error}");
+
+                throw new ArgumentOutOfRangeException(nameof(A), error);
+
+            }
+        }
 
     }
 

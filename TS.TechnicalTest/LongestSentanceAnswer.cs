@@ -17,6 +17,7 @@ public class LongestSentanceAnswer
 
     /// <summary>
     /// Get the word count from the sentence containing the largest number of valid words
+    /// Only counting those words that contain only letters (ie: a-z / A-Z)
     /// </summary>
     /// <param name="text"></param>
     /// <returns></returns>
