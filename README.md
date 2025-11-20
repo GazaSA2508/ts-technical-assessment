@@ -1,4 +1,4 @@
-# 📝 Garreth Hall - Technical Assessment
+## 📝 Garreth Hall - Technical Assessment
 
 This repository contains solutions to two coding challenges: **Longest Sentence** detection and **Deepest Pit** calculation. Both questions have been answered with best practices in mind, unit testing and input validation.
 
