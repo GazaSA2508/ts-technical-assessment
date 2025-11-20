@@ -2,6 +2,9 @@
 
 namespace TS.UnitTests;
 
+/// <summary>
+/// Method naming convention: MethodUnderTest_Scenario_ExpectedResult 
+/// </summary>
 [TestClass]
 public class DeepestPitTests
 {
@@ -15,7 +18,7 @@ public class DeepestPitTests
     }
 
     [TestMethod]
-    public void Q2_GetPitDepth()
+    public void GetPitDepth_WithInput_Returns2()
     {
         var points = new[] { 1, 2, 3, 1, 2, 3, 1, 2, 3 };
         var result = DeepestPitAnswer.Solution(points);

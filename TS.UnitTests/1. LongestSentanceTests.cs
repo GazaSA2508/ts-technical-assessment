@@ -2,6 +2,9 @@
 
 namespace TS.UnitTests;
 
+/// <summary>
+/// Method naming convention: MethodUnderTest_Scenario_ExpectedResult 
+/// </summary>
 [TestClass]
 public class LongestSentanceTests
 {
@@ -15,10 +18,19 @@ public class LongestSentanceTests
     }
 
     [TestMethod]
-    public void Q1_GetLongestSentance()
+    public void GetLongestSentance_WithExampleInput_Returns2()
     {
         var input = $"Forget CVs..Save time . x x";
-        //var input = $"Test one, has 4words word. This this one has five.";
+
+        var outcome = LongestSentanceAnswer.Solution(input);
+
+        Assert.AreEqual(2, outcome);
+    }
+
+    [TestMethod]
+    public void GetLongestSentance_WithInput_Returns5()
+    {
+        var input = $"Test one, has 4words word. This this one has five.";
 
         var outcome = LongestSentanceAnswer.Solution(input);
 
