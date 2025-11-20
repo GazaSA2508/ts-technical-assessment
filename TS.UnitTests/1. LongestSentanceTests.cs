@@ -18,9 +18,11 @@ public class LongestSentanceTests
     public void Q1_GetLongestSentance()
     {
         var input = $"Forget CVs..Save time . x x";
+        //var input = $"Test one, has 4words word. This this one has five.";
+
         var outcome = LongestSentanceAnswer.Solution(input);
 
-        Assert.AreEqual(2, outcome);
+        Assert.AreEqual(5, outcome);
     }
 
 

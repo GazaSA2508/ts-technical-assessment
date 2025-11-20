@@ -1,4 +1,6 @@
 ﻿
+using System.Text.RegularExpressions;
+
 namespace TS.TechnicalTest;
 
 public class LongestSentanceAnswer
@@ -37,7 +39,11 @@ public class LongestSentanceAnswer
 
             //### Count words in new setence
             var words = newSentence.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-            int wordCount = words.Count();
+
+            //### Only count words containing letters only
+            int wordCount = words.Count(x => Regex.IsMatch(x, "[a-zA-Z]"));
+
+            //Console.WriteLine($"wordCount: {wordCount}");
 
             if (wordCount > maxCount)
                 maxCount = wordCount;
